@@ -11,7 +11,7 @@ import time
 re="\033[1;31m"
 gr="\033[1;32m"
 cy="\033[1;36m"
-SLEEP_TIME = 30
+SLEEP_TIME = 5
 
 class main():
 
@@ -65,7 +65,7 @@ class main():
         print(gr+"[1] send sms by user ID\n[2] send sms by username ")
         mode = int(input(gr+"Input : "+re))
          
-        message = input(gr+"[+] Enter Your Message : "+re)
+        message = open("input.txt", "r").read()
          
         for user in users:
             if mode == 2:

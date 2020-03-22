@@ -11,7 +11,6 @@ import time
 re="\033[1;31m"
 gr="\033[1;32m"
 cy="\033[1;36m"
-SLEEP_TIME = 15
 
 class main():
 
@@ -81,6 +80,7 @@ class main():
             try:
                 print(gr+"[+] Sending Message to:", user['name'])
                 client.send_message(receiver, message.format(user['name']))
+                SLEEP_TIME = random.randint(15, 25)
                 print(gr+"[+] Waiting {} seconds".format(SLEEP_TIME))
                 time.sleep(SLEEP_TIME)
             except PeerFloodError:
